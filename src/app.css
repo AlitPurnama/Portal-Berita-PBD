@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+}
+
+@theme {
+    --color-shark-50: #f8f7f7;
+--color-shark-100: #f0eeee;
+--color-shark-200: #dddada;
+--color-shark-300: #c0b9ba;
+--color-shark-400: #9d9394;
+--color-shark-500: #817677;
+--color-shark-600: #6a5f5f;
+--color-shark-700: #564e4e;
+--color-shark-800: #494343;
+--color-shark-900: #403a3a;
+--color-shark-950: #242121;
+
+
+}
