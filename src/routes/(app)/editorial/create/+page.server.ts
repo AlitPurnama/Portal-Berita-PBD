@@ -5,15 +5,7 @@ import * as table from '$lib/server/db/schema';
 import { encodeBase64url } from '@oslojs/encoding';
 import { randomBytes } from 'node:crypto';
 import { eq } from 'drizzle-orm';
-
-function generateSlug(title: string): string {
-	return title
-		.toLowerCase()
-		.trim()
-		.replace(/[^\w\s-]/g, '') // Remove special characters
-		.replace(/[\s_-]+/g, '-') // Replace spaces and underscores with hyphens
-		.replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-}
+import { generateSlug } from '$lib/utils/slug';
 
 export const load: PageServerLoad = async ({ locals, url }) => {
 	// Redirect to login if not authenticated

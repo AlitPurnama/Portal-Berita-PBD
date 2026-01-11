@@ -5,9 +5,9 @@ import { existsSync } from 'fs';
 import { encodeBase64url } from '@oslojs/encoding';
 import { randomBytes } from 'node:crypto';
 
-const UPLOAD_DIR = 'static/uploads';
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ALLOWED_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+export const UPLOAD_DIR = 'static/uploads';
+export const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+export const ALLOWED_MIME_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'] as const;
 
 export interface ImageUploadResult {
 	original: string;
@@ -31,7 +31,7 @@ async function ensureUploadDir() {
 /**
  * Generate unique filename
  */
-function generateFilename(originalName: string): string {
+export function generateFilename(originalName: string): string {
 	const ext = originalName.split('.').pop()?.toLowerCase() || 'jpg';
 	const randomId = encodeBase64url(randomBytes(12));
 	const timestamp = Date.now();
